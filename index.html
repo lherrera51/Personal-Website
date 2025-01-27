@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leonardo Herrera - Portfolio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+                line-height: 1.6;
+                background-color: #f4f4f9;
+            }
+            header {
+                background-image: url('WebsiteImages/SDTS.jpg');
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                padding: 100px;
+            }
+    
+            .header-container {
+                display: flex;
+                align-items: top;
+                justify-content: flex-start;
+            }
+    
+            header img {
+                width: 150px;
+                height: 150px;
+                border-radius: 75%;
+                object-fit: cover;
+                margin-right: 20px;
+                border: 5px solid #fff;
+            }
+            nav {
+            background: #111111;
+            text-align: center;
+            position:sticky;
+            top: 0;
+            z-index:1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            nav a {
+                color: #fff;
+                margin: 0 15px;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: inline-block;
+            }
+            nav a:hover {
+                background: #555;
+            }
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+            }
+            nav ul li {
+                position: relative;
+            }
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 20px;
+                display: inline-block;
+                border-radius: 6px;
+            }
+            nav ul li:hover > a {
+                background: #555;
+            }
+            /* Submenu box styling */
+            nav ul li ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #333;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                padding: 10px;
+                text-align: left;
+                min-width: 200px; /* Make the box wider */
+            }
+            nav ul li:hover ul {
+                display: block;
+               
+            }
+            nav ul li ul li {
+                margin: 5px 0;
+            }
+            nav ul li ul li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: block;
+            }
+            nav ul li ul li a:hover {
+                background: #555;
+                border-radius: 4px;
+            }
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+            }
+            .section {
+                margin: 20px 0;
+            }
+            .projects {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .project {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                flex: 1 1 calc(33.333% - 20px);
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .project img {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            .timeline-event {
+                margin-bottom: 30px;
+                border-left: 4px solid #333;
+                padding-left: 20px;
+                position: relative;
+            }
+            .timeline-event::before {
+                content: '';
+                position: absolute;
+                left: -8px;
+                top: 5px;
+                width: 16px;
+                height: 16px;
+                background: #333;
+                border-radius: 50%;
+            }
+            .timeline-event img {
+                max-width: 70%;
+                height: auto;
+                border-radius: 5px;
+                display: block;
+                margin: 10px 0;
+            }
+            figure {
+                text-align: center; /* Center-align the content inside the figure */
+                  /* Add spacing and center the figure */
+            }   
+
+            figure img {
+                max-width: 70%; /* Adjust the size of the image */
+                height: auto; /* Maintain aspect ratio */
+                border-radius: 5px;
+            }
+
+            figcaption {
+                font-size: 1rem; /* Caption font size */
+                color: #000000; /* Optional: darker color for better readability */
+                margin-top: 10px; /* Adds space between image and caption */
+                font-weight: bold; /* Makes the caption bold */
+            }
+            .award-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px; /* Spacing between boxes */
+                margin-top: 20px;
+            }
+
+            .award-box {
+                background-color: #f9f9f9; /* Light background for the box */
+                border: 1px solid #ddd; /* Border around the box */
+                border-radius: 8px; /* Rounded corners */
+                width: 462px; /* Fixed width for each box */
+                padding: 15px; /* Internal spacing */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+                text-align: center; /* Center-align text */
+            }
+
+            .award-box h3 {
+                font-size: 1.2em;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            .award-box p {
+                font-size: 0.95em;
+                color: #555;
+                margin-bottom: 15px;
+            }
+            .award-image {
+                text-align: center; /* Centers content inside the div */
+                margin: 20px 0; /* Adds spacing around the image */
+            }
+            .award-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px; /* Slightly rounded edges for images */
+            }
+            footer {
+                background: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1rem 0;
+            }
+            
+        </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="WebsiteImages/Leonardo-Herrera-WEB-4675.jpg" alt="Your Professional Headshot">
+            <div class="header-text">
+                <h1>Leonardo Herrera</h1>
+                <p>Innovator | Team Collaborator | Lifelong Learner | Mechanical Engineer</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li>
+                <a href="#experience">Experience</a>
+                <ul>
+                    <li><a href="internship1.html">NASA Internship 1</a></li>
+                    <li><a href="internship2.html">NASA Internship 2</a></li>
+                </ul>
+            </li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h1>About Me</h1>
+            <p>Welcome!</p>
+            <p>I am an enthusiastic engineer with hands-on experience in robotics, mechanical design, and testing systems. My professional journey includes contributing to projects for NASA, Ball Aerospace, and other innovative organizations. My experience spans mechanical design, dynamic systems modeling, quality control, and testing critical assets like docking systems. I thrive on tackling complex engineering challenges and delivering innovative, reliable solutions.</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h1>What I Can Do</h1>
+            <div class="projects">
+                <div class="project">
+                    <h3>Mechanical Design</h3>
+                    <p>Experienced in creating innovative mechanical solutions for NASA and Ball Aerospace, from initial concepts to detailed 3D models and production-ready designs. Proficient in CAD tools such as Creo, NX, and SolidWorks, with experience in FEA analysis (Stress, Thermal, Vibration), fixture design, and optimization for manufacturability. Click on image for information about this project.</p>
+                    <a href = "internship1.html"> <img src = "WebsiteImages/Photos NASA Internship/LeicaAfter.jpg" alt="Leica"> </a>
+                </div>
+                                
+                <div class="project">
+                    <h3>Test Engineering</h3>
+                    <p>Experienced in supporting and executing complex testing procedures for the SDTS project at NASA JSC. Played a key role as operator and data analyst for docking tests, ensuring precision and reliablilty in capturing and interpreting critical performance metrics.</p>
+                    <a href = "internship2.html"> <img src="WebsiteImages/Photos NASA Internship/TestingJDS2.jpg" alt="NASA Project"></a>
+                </div>
+                
+                <div class="project">
+                    <h3>Controls Engineering - Control Filter Assessment for SDTS Robot</h3>
+                    <p>Developed as part of my academic thesis, this project involved designing a dynamic system model for the SDTS robot using Simulink. Key achievements included designing and implementing a Kalman Filter and LQR controller, conducting tests, and performing detailed analysis to enhance system performance. (Thesis pending publication)</p>
+                    <a href="Thesis.html"> <img src="WebsiteImages/Thesis/LQG Controller Block.PNG" alt="SDTS Robot"></a>
+                </div>
+
+                <div class="project">
+                    <h3>Web Development</h3>
+                    <p>Crafting responsive, user-friendly websites from the ground up. Skilled in HTML and CSS, with a focus on clean design and seamless navigation. This portfolio website is a testiment to my ability to transform ideas into functional digital experiences.</p>
+                    <img src="WebsiteImages/Webdevelopment.PNG" alt="Webdevelopment">               
+                </div>   
+            </div>
+        </section>
+        
+        <section id="awards" class="section">
+        <h1>Awards and Recognition</h1>
+        <div class = "award-container">
+                <div class = "award-box">
+                    <h3><strong>CACI - In Recognition of Outstanding Performance:</strong></h3>
+                    <p>"Outstanding performance, collaboration, and adaptability within a challenging test environment to complete the Japan Aerospace Exploration Agency (JAXA) Docking System test series on schedule." - August 10, 2023</p>
+                        <div class = "award-image">
+                            <img src="WebsiteImages/CACI Award 2.jpg" alt="CACI Award" class="award-image" >
+                        </div>
+                </div>
+
+                <div class = "award-box">
+                    <h3><strong>NASA - Elite Team Award:</strong></h3>
+                    <p>"For your outstanding performance, collaboration, and adaptability within a challenging test environment to complete the JAXA Docking System (JDS) test series on schedule." - August 2, 2023</p>
+                        <div class = "award-image">    
+                            <img src="WebsiteImages/NASA Award 2.jpg" alt="NASA Award" class="award-image">
+                        </div>
+                </div>
+
+                <div class = "award-box">
+                    <h3><strong>CACI - In Recognition of Outstanding Performance:</strong></h3>
+                    <p>"Excellent support leading to the completion of a series of 339 test cases for the SpaceX Docking Asset mechanism providing valuable data for characterizing the Electronic Six Degree-of-Freedom (e6DOF) system performance, development of Six-Degree-of-Freedom Dynamic Test System (SDTS) models, and certification for future docking tests." - September 22, 2022</p>
+                        <div class = "award-image">        
+                            <img src="WebsiteImages/CACI Award 1.jpg" alt="CACI Award" class="award-image">
+                        </div>
+                </div>
+
+                <div class = "award-box">
+                    <h3><strong>NASA - Elite Team Award:</strong></h3>
+                    <p>"For demonstrating exceptional resilience, determination, and teamwork while supporting the Six Degree of Freedom Dynamic Test System (SDTS) facility during the Space-X Docking Asset test series." - September 14, 2022</p>
+                        <div class = "award-image">       
+                            <img src="WebsiteImages/NASA Award 1.jpg" alt="NASA Award" class="award-image">
+                        </div>
+                </div>
+        </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h1>Contact</h1>
+            <p>Email: <a href="herrera.leonardo0355@gmail.com">herrera.leonardo0355@gmail.com</a></p>
+            <p>LinkedIn: <a href="http://www.linkedin.com/in/lh-mech-eng" target="_blank">http://www.linkedin.com/in/lh-mech-eng</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Leonardo Herrera. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

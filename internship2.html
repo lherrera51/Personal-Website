@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leonardo Herrera - Portfolio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 100;
+                line-height: 1.6;
+                background-color: #f4f4f9;
+            }
+            header {
+                background-image: url('WebsiteImages/SDTS.jpg');
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                padding: 100px;
+            }
+    
+            .header-container {
+                display: flex;
+                align-items: top;
+                justify-content: flex-start;
+            }
+    
+            header img {
+                width: 150px;
+                height: 150px;
+                border-radius: 75%;
+                object-fit: cover;
+                margin-right: 20px;
+                border: 5px solid #fff;
+            }
+            nav {
+            background: #111111;
+            text-align: center;
+            position:sticky;
+            top: 0;
+            z-index:1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            nav a {
+                color: #fff;
+                margin: 0 15px;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: inline-block;
+            }
+            nav a:hover {
+                background: #555;
+            }
+            nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            }
+            nav ul li {
+                position: relative;
+            }
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 20px;
+                display: inline-block;
+                border-radius: 6px;
+            }
+            nav ul li:hover > a {
+                background: #555;
+            }
+            /* Submenu box styling */
+            nav ul li ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #333;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                padding: 10px;
+                text-align: left;
+                min-width: 200px; /* Make the box wider */
+            }
+            nav ul li:hover ul {
+                display: block;
+            }
+            nav ul li ul li {
+                margin: 5px 0;
+            }
+            nav ul li ul li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: block;
+            }
+            nav ul li ul li a:hover {
+                background: #555;
+                border-radius: 4px;
+            }
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+            }
+            .section {
+                margin: 20px 0;
+            }
+            .projects {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .project {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                flex: 1 1 calc(33.333% - 20px);
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .project img {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            .project-details {
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                line-height: 1.6;
+                font-family: Arial, sans-serif;
+            }
+
+            .project-header {
+                background: none;
+                color: #000000;
+                text-align: center;
+                padding: 100px 20px;
+                margin-bottom: 20px;
+            }
+
+            .project-header .hero-image {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                border-radius: 10px;
+            }
+
+            .image-gallery {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .image-gallery img {
+                max-width: 45%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            section h2 {
+                margin-top: 30px;
+                color: #333;
+            }
+
+            ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+          
+            figure {
+                text-align: center; /* Center-align the content inside the figure */
+                  /* Add spacing and center the figure */
+            }   
+
+            figure img {
+                max-width: 50%; /* Adjust the size of the image */
+                height: auto; /* Maintain aspect ratio */
+                border-radius: 5px;
+            }
+
+            figcaption {
+                font-size: 1rem; /* Caption font size */
+                color: #000000; /* Optional: darker color for better readability */
+                margin-top: 10px; /* Adds space between image and caption */
+                font-weight: bold; /* Makes the caption bold */
+            }
+            .video-container {
+                display: flex;
+                justify-content: center; /* Center the video horizontally */
+                margin: 20px 0; /* Add some vertical spacing */
+            }
+
+            .video-container video {
+                max-width: 300px; /* Set the maximum width of the video */
+                height: auto; /* Maintain the aspect ratio */
+                border-radius: 10px; /* Optional: Add rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better aesthetics */
+            }
+            footer {
+                background: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1rem 0;
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="WebsiteImages/Leonardo-Herrera-WEB-4675.jpg" alt="Your Professional Headshot">
+            <div class="header-text">
+                <h1>Leonardo Herrera</h1>
+                <p>Innovator | Team Collaborator | Lifelong Learner | Mechanical Engineer</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li>
+                <a href="#experience">Experience</a>
+                <ul>
+                    <li><a href="internship1.html">NASA Internship 1</a></li>
+                    <li><a href="internship2.html">NASA Internship 2</a></li>
+                </ul>
+            </li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+            <h1>NASA Internship 2</h1>
+            <p>This is the second internship I completed with CACI (subcontracted through Prairie View A&M University) at NASA. I worked on the same project as the <a href="internship1.html" target="_blank">first internship</a>. I supported all phases of JAXA's docking tests to certify their HTV-X vehicle for docking with the ISS and Lunar Gateway. I also supported mechanical and controls tasks. During this internship, I collected data and completed analysis for my <a href="Thesis.html" target="_blank">thesis</a> on a control filter assessment of the <a href="https://www.nasa.gov/software-robotics-and-simulation-division/dynamic-systems-test-branch/" target="_blank">SDTS</a> robot.</p>
+            <h2>NASA Project: Six Degrees of Freedom Dynamic Test System (SDTS) (Sept. 2022 - Sept. 2023)</h2>
+            <h3>Task 1: Fabrication of Swing Gate and Understairs Storage Door</h3>
+            <p>One of the entry points to the SDTS test area had a cone used to keep tourists from entering the work area. I replaced it with a swing gate I designed and fabricated. I quickly created the design, cut aluminum 8020 to make the gate, and ordered two <a href="https://www.mcmaster.com/5537T78/" target="_blank">2-Way Hinges</a> and two U-bolts to clamp the gate to the mezzanine from McMaster-Carr. This is shown in Figures 16 and 17.</p>
+            <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/SwingGate.jpg" alt="SwingGate">
+                    <figcaption><strong>Figure 16: Swing Gate</strong></figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/SwingGate3.jpg" alt="SwingGate">
+                    <figcaption><strong>Figure 17: Swing Gate Open</strong></figcaption>
+                </figure>
+                <p>This gate swings both ways, as demonstrated in Figures 17 and 18.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/SwingGate4.jpg" alt="SwingGate">
+                    <figcaption><strong>Figure 18: Swing Gate Other Way</strong></figcaption>
+                </figure>
+                <p>Another fabrication task I completed was designing and fabricating a door for underneath the mezzanine stairs, as shown in Figure 19.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/DoorBefore.jpg" alt="Door">
+                    <figcaption><strong>Figure 19: Mezzanine Stairs</strong></figcaption>
+                </figure>
+                <p>I took measurements and designed the door, accounting for an additional partition wall. After creating the drawing, I started fabricating the door by cutting 8020 aluminum and plexiglass. I then began assembling the door.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/DoorProcess.jpg" alt="Door">
+                    <figcaption>Figure 20: Door Fabrication</figcaption>
+                </figure>
+                <p>Once fabrication was complete, I installed the door and added a wall partition. Figures 21 and 22 show the final result.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/DoorAfter.jpg" alt="Door">
+                    <figcaption>Figure 21: Door Installed</figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/DoorAfter2.jpg" alt="Door">
+                    <figcaption>Figure 22: Door Open</figcaption>
+                </figure>
+                <p>This provided additional storage for SDTS. I also installed a light bar inside, as shown in Figure 23.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/light.jpg" alt="Door">
+                    <figcaption>Figure 23: Storage Light Installation</figcaption>
+                </figure>
+              
+                <h3>Task 2: Optotrak Plates</h3>
+                <p>Another design task I completed was the Optotrak plates. These plates attach directly to the truss, holding Brunson mounts that secure the Optotrak cameras (three cameras), shown in Figures 24 and 25.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/Plates.jpg" alt="Plate">
+                    <figcaption>Figure 24: Optotrak Camera Plate Mount Previous Design</figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/Plates2.jpg" alt="Plate">
+                    <figcaption>Figure 25: Optotrak Camera Plate Mount Previous Design Detailed</figcaption>
+                </figure>
+                <p>I redesigned the plate to improve stability by increasing the attachment points from three to four. After performing stress analysis and verifying measurements, I created the final design and sent it to Xometry for fabrication. Figure 26 shows the new design. Due to multiple docking test requests, these plates were installed after my internship.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/OptoPlate.jpg" alt="Plate">
+                    <figcaption>Figure 26: New Optotrak Plates</figcaption>
+                </figure>
+
+                <h3>Task 3: E6DOF Electronics Mounts</h3>
+                <p>SDTS incorporates multiple subsystems, each serving a critical role in testing and data collection. These include motion capture sensors, force/moment sensors, and video recording systems. Given the complexity of these operations, the system relies on a wide array of electronics to interface and control these components. While most of these components are housed separately, some components needed to be mounted directly on the robot. Initially, these electronics were attached using zip ties and Velcro, which presented potential reliability and maintenance concerns.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/ElectronicsBefore3.jpg" alt="e6DOF Electronics">
+                    <figcaption>Figure 27: Previous Electronics Attachment</figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/ElectronicsBefore4.jpg" alt="e6DOF Electronics">
+                    <figcaption>Figure 28: Additional - Previous Electronics Attachment</figcaption>
+                </figure>
+                <p>Recognizing the need for a more robust and organized solution, I took the initiative to address this issue. I began by carefully measuring the dimensions of each electronic component and mapping where the wires were located. Using this information, I designed custom mounts tailored to each device, ensuring secure attachment. I then utilized a 3D printer to bring my designs to life and installed the mounts. This improvement not only enhanced the system's reliability but also streamlined maintenance by providing an organized and easily accessible layout for the electronics.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/e6DOFElectronicsAfter2.jpg" alt="e6DOF Electronics">
+                    <figcaption>Figure 29: New Electronic Mounts</figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/e6DOFElectronicsAfter.jpg" alt="e6DOF Electronics">
+                    <figcaption>Figure 30: Additional - New Electronic Mounts</figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/e6DOFElectronics.jpg" alt="e6DOF Electronics">
+                    <figcaption>Figure 31: Optotrak Device</figcaption>
+                </figure>
+                
+                <h3>Task 4: ATI Load Sensor Tool</h3>
+                <p>The load sensor plays a critical role in measuring forces and moments acting on the system, capturing data in all six directions—three forces (X, Y, Z) and three moments (Mx, My, Mz).</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/e6DOFElectronics1.jpg" alt="e6DOF Electronics">
+                    <figcaption>Figure 32: Load Sensor</figcaption>
+                </figure> 
+                <p>To ensure accurate calibration and functionality, a specialized checkout tool is used to apply controlled moments to the sensor. However, the existing tool presented several challenges: its weight made it difficult to handle, and its size and design lacked the ability to easily apply moments in multiple directions. This is shown in Figure 33, where the old tool is the green one, and the new one is the smaller one.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/ATITools.jpg" alt="Tools">
+                    <figcaption>Figure 33: Load Sensor Tools</figcaption>
+                </figure> 
+                <p>To address these issues, I redesigned the tool to improve its functionality and usability. The new design incorporates two slots compatible with a standard 3/8-inch wrench, allowing precise moments to be applied in the pitch and roll directions with greater control. I also changed the material to aluminum to make the tool lighter while maintaining its structural integrity. This redesign greatly enhanced the efficiency of load sensor checkouts.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/ATILoadSensor.jpg" alt="Tools">
+                    <figcaption>Figure 34: Load Sensor Tool with Wrench</figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/ATILoadSensor2.jpg" alt="Tools">
+                    <figcaption>Figure 35: Load Sensor Tool with Wrench Applied Moment</figcaption>
+                </figure>
+                
+                <h3>Task 5: Docking Tests - JAXA HTV-X Vehicle</h3>
+                <h4>Background</h4>
+                <p>The Japan Aerospace Exploration Agency (JAXA) is developing the ability to resupply the International Space Station (ISS) using their new <a href="https://humans-in-space.jaxa.jp/en/htv-x/" target="_blank">HTV-X vehicle</a>. Unlike previous missions, where the vehicle berthed with the assistance of the Space Station Robotic Arm, the HTV-X will perform autonomous docking. This required extensive testing and preparation.</p>
+                <h4>Tasks During Testing</h4>
+                <ul>
+                    <li><strong>Video Operator:</strong> Supported the testing team by operating the video equipment, ensuring critical moments of the docking process were captured for analysis and review. I made sure the video system was up and running each morning on the days I was assigned as the video operator.</li>
+                    <li><strong>Simhost Operator:</strong> Worked alongside the Digital Controls System (DCS) operator to jointly control the robot during docking tests. This role required specialized training, which I completed over a few months prior to JAXA testing, enabling me to actively contribute to precise and coordinated robotic operations.</li>
+                </ul>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/TestingJDS.jpg" alt="Tools">
+                    <figcaption>Figure 36: Docking Test - JAXA</figcaption>
+                </figure>
+                <h4>Design Task: Optotrak Marker Placement</h4>
+                <p>One key design challenge was determining how to mount infrared markers on the optical sensor shafts provided by JAXA. These markers are essential for capturing real-time positional data during docking tests via the Optotrak Cameras. I designed a placement solution that securely attached the marker to the HTV-X Soft Capture System (SCS) ring. This was crucial, as this data is important to JAXA.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/Marker.jpg" alt="Tools">
+                    <figcaption>Figure 37: Optotrak Marker on JDS SCS</figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/MarkerDetailed.jpg" alt="Tools">
+                    <figcaption>Figure 38: Optotrak Marker on JDS SCS - Detailed</figcaption>
+                </figure>
+                <h4>Additional Contributions</h4>
+                <ul>
+                    <li><strong>Before Testing Began:</strong>
+                        <ul>
+                            <li>Supported robot checkouts to ensure functionality and calibration in the weeks leading up to JAXA's arrival.</li>
+                            <li>Assisted with unloading and installing hardware for both the JAXA vehicle and the International Docking Adapter (IDA).</li>
+                        </ul>
+                        <figure>
+                            <img src="WebsiteImages/Photos NASA Internship/Rigging.jpg" alt="Tools">
+                            <figcaption>Figure 39: JDS Rigging Activities</figcaption>
+                        </figure>
+                    </li>
+                    <li><strong>After Testing Ended:</strong>
+                        <ul>
+                            <li>Contributed to the disassembly and removal of hardware, ensuring all equipment was safely packed and accounted for.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Task 6: Control Filter Assessment Tasks (See <a href = "Thesis.html" target="_blank">Thesis</a> for more details)</h3>
+                <ul>
+                    <li><strong>Mechanical Model:</strong></li>
+                    <ul>
+                        <li>Developed a <a href = "6DOF.html" target="_blank">CAD model</a> of e6DOF and a 1D mechanical model for e6DOF used at SDTS and determined constants for the model.</li>
+                        <li>Developed a Simulink model of the mechanical model.</li>
+                        <li>Wrote a MATLAB script to determine the transfer function of the mechanical model. This transfer function converts force input into position</li>
+                    </ul>
+                    <li><strong>Chirp Analysis:</strong></li>
+                    <ul>
+                        <li>Performed chirp tests and chirp analysis on the linear actuator and motor using vectfit3, a MATLAB package. </li>
+                        <li>Validated the transfer function and state space matrices by writing a script which utilizes Euler's method. This transfer function is a torque controller which converts torque to velocity, which can then be converted to acceleration and multiplied by the reflected moment of inertia of the actuator to get the transfer function of input torque and output force.</li>
+                    </ul>
+                    <li><strong>Simulink Model:</strong></li>
+                    <ul>
+                        <li>Determined the overall transfer function by multiplying the transfer function of the mechanical model by the transfer function with input torque and output force.</li>
+                    </ul>
+                </ul>
+                <p></p>
+           
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Leonardo Herrera. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

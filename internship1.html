@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leonardo Herrera - Portfolio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 100;
+                line-height: 1.6;
+                background-color: #f4f4f9;
+            }
+            header {
+                background-image: url('WebsiteImages/SDTS.jpg');
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                padding: 100px;
+            }
+    
+            .header-container {
+                display: flex;
+                align-items: top;
+                justify-content: flex-start;
+            }
+    
+            header img {
+                width: 150px;
+                height: 150px;
+                border-radius: 75%;
+                object-fit: cover;
+                margin-right: 20px;
+                border: 5px solid #fff;
+            }
+            nav {
+            background: #111111;
+            text-align: center;
+            position:sticky;
+            top: 0;
+            z-index:1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            nav a {
+                color: #fff;
+                margin: 0 15px;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: inline-block;
+            }
+            nav a:hover {
+                background: #555;
+            }
+            nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            }
+            nav ul li {
+                position: relative;
+            }
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 20px;
+                display: inline-block;
+                border-radius: 6px;
+            }
+            nav ul li:hover > a {
+                background: #555;
+            }
+            /* Submenu box styling */
+            nav ul li ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #333;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                padding: 10px;
+                text-align: left;
+                min-width: 200px; /* Make the box wider */
+            }
+            nav ul li:hover ul {
+                display: block;
+            }
+            nav ul li ul li {
+                margin: 5px 0;
+            }
+            nav ul li ul li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: block;
+            }
+            nav ul li ul li a:hover {
+                background: #555;
+                border-radius: 4px;
+            }
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+            }
+            .section {
+                margin: 20px 0;
+            }
+            .projects {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .project {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                flex: 1 1 calc(33.333% - 20px);
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .project img {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            .project-details {
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                line-height: 1.6;
+                font-family: Arial, sans-serif;
+            }
+
+            .project-header {
+                background: none;
+                color: #000000;
+                text-align: center;
+                padding: 100px 20px;
+                margin-bottom: 20px;
+            }
+
+            .project-header .hero-image {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                border-radius: 10px;
+            }
+
+            .image-gallery {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .image-gallery img {
+                max-width: 45%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            section h2 {
+                margin-top: 30px;
+                color: #333;
+            }
+
+            ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+          
+            figure {
+                text-align: center; /* Center-align the content inside the figure */
+                  /* Add spacing and center the figure */
+            }   
+
+            figure img {
+                max-width: 50%; /* Adjust the size of the image */
+                height: auto; /* Maintain aspect ratio */
+                border-radius: 5px;
+            }
+
+            figcaption {
+                font-size: 1rem; /* Caption font size */
+                color: #000000; /* Optional: darker color for better readability */
+                margin-top: 10px; /* Adds space between image and caption */
+                font-weight: bold; /* Makes the caption bold */
+            }
+            .video-container {
+                display: flex;
+                justify-content: center; /* Center the video horizontally */
+                margin: 20px 0; /* Add some vertical spacing */
+            }
+
+            .video-container video {
+                max-width: 300px; /* Set the maximum width of the video */
+                height: auto; /* Maintain the aspect ratio */
+                border-radius: 10px; /* Optional: Add rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better aesthetics */
+            }
+            footer {
+                background: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1rem 0;
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="WebsiteImages/Leonardo-Herrera-WEB-4675.jpg" alt="Your Professional Headshot">
+            <div class="header-text">
+                <h1>Leonardo Herrera</h1>
+                <p>Innovator | Team Collaborator | Lifelong Learner | Mechanical Engineer</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li>
+                <a href="#experience">Experience</a>
+                <ul>
+                    <li><a href="internship1.html">NASA Internship 1</a></li>
+                    <li><a href="internship2.html">NASA Internship 2</a></li>
+                </ul>
+            </li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+            <h1>NASA Internship 1</h1>
+            <p>NASA contractor and defense contractor: CACI recruits students from Prairie View A&M University, the school I went to, through a week long boot camp learning the <a href="https://nasa.github.io/trick/" target="_blank">NASA trick software</a>. Prairie View A&M has a contract with CACI, meaning i worked under a subcontract. During this internship I worked on two NASA projects: SDTS and SES, supporting mechanical design and testing, which is further described below.</p>
+                <h2>NASA Project: Six Degrees of Freedom Dynamic Test System (SDTS) (March 2022 - August 2022)</h2>
+                <h3>Task 1: SpaceX Docking Tests</h4>
+                <p>The <a  href="https://www.nasa.gov/software-robotics-and-simulation-division/dynamic-systems-test-branch/" target="_blank">SDTS</a> (Six Degrees of Freedom Dynamic Test System) project, as shown in Figure 1, is responsible for certifying vehicles for docking to the ISS and future Lunar Gateway. 
+                    It utilizes the international docking adapter which is mounted on a stewart platform robot, the robot is then controlled to move up towards the docking asset (SpaceX) as shown in Figure 2. 
+                    During this time, SDTS had just replaced the <a  href="https://ntrs.nasa.gov/citations/20205008864" target="_blank">old hydraulic robot</a> with an electric system. In order to characterize its performance, several tests were performed using the SpaceX asset.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/SDTS.jpg" alt="Docking Tests">
+                    <figcaption><strong>Figure 1: Docking test facility during SpaceX tests</strong></figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/SpaceX.jpg" alt="SpaceX Docking Asset">
+                    <figcaption><strong>Figure 2: SpaceX vehicle asset</strong></figcaption>
+                </figure>
+                <p>I played an active role as video operator, my responsibilities included:</p>
+                <ul>
+                    <li>Setting up, operating, and shutting down video recording systems as directed by test supervisors.</li>
+                    <li>Recording critical footage for monitoring test articles during dynamic motion, which was delivered to customers.</li>
+                </ul>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/VideoOp.jpg" alt="Docking Tests">
+                    <figcaption>Figure 3: Video operating station</figcaption>
+                </figure>
+                <h3>Task 2: Leica TMAC TMC30 Inverted Mount</h3>
+                <p>SDTS utilizes measurement systems to track motion from the robot, the international docking adapter, and the docking asset. One of those systems is the laser measurement system which is called <a href="https://nexus.hexagon.com/home/product/laser-trackers-at960/" target="_blank">Leica</a>. 
+                    Leica is used to track a single point in all six degrees of motion (three translational and three rotational). Leica is fixed on the ground and another apparutus, which is being tracked, is mounted on the 
+                    robot. This apparatus is called TMAC as shown in figure 4.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/LeicaBefore.jpg" alt="Docking Tests">
+                    <figcaption><strong>Figure 4: Leica TMAC mount before redesign</strong></figcaption>
+                </figure>
+                <p>The task was to redesign the mount which held the TMAC and invert it, in order to lower the height of the device. This is what I did for this task:</p>
+                <ul>
+                    <li>Redesigned the TMAC mount to reduce height by inverting it.</li>
+                    <li>Performed interference checks since the apparatus would be close to the moving actuators which could damage the TMAC if struck.</li>
+                    <li>Did a stress analysis to reduce the weight of the mount, thus reducing the cost of the mount.</li>
+                    <li>Performed modal analysis because it is mounted on the robot, and it moves a lot. I also checked the modal frequencies, to ensure that the ones on the mount would be higher than the ones on the robot.</li>
+                </ul>
+                <p>This can be seen in figure 5, the device is now inverted and is lower than the upper circulur ring.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/LeicaAfter.jpg" alt="Docking Tests">
+                    <figcaption><strong>Figure 5: Leica TMAC inverted mount</strong></figcaption>
+                </figure>
+                
+
+                <h3>Task 3: ATI Box Mount</h3>
+                
+                <p>SDTS utilizes <a  href="https://www.ati-ia.com/products/ft/sensors.aspx" target="_blank">Force/moment sensors</a> for contact test runs. There are three sensors mounted on the robot and three topside on the fixed structure where the docking asset is mounted. 
+                    These sensors utilize what is called <a  href="https://www.ati-ia.com/app_content/documents/9230-05-1310.auto.pdf" target="_blank">Net F/T Interface Box</a>, found on the ATI webpage, which are used for connecting the sensors and transferring that connection to EtherCAT. 
+                    These boxes contain status lights on top to check whether the sensors are active. These boxes are mounted below a circular ring called the load ring, this is where the International Docking Adapter is mounted on. Figure 6 shows how the Net F/T Interface Boxes were mounted to the robot.</p>
+                    <figure>
+                        <img src="WebsiteImages/Photos NASA Internship/ATIboxbefore.jpg" alt="ATI Box Mount Before">
+                        <figcaption><strong>Figure 6: ATI Net F/T Interface Box</strong></figcaption>
+                    </figure>
+                <p>The task was to redesign the mount, so that the interface boxes are reorientated for easier visibility of the status lights. This is what I did:</p>
+                <ul>
+                    <li>Reoriented the boxes for better visibility of status lights as shown in figure 7.</li>
+                    <li>Minimized space while maintaining efficient functionality.</li>
+                </ul> 
+                    <figure>
+                        <img src="WebsiteImages/Photos NASA Internship/ATIBox.jpg" alt="ATI Box Mount after">
+                        <figcaption><strong>Figure 7: ATI Net F/T Interface Box Redesign</strong></figcaption>
+                    </figure>
+
+                <h3>Task 4: Optotrak Mount</h3>
+                <p>Another measurement system SDTS uses is the infrared <a  href="https://www.ndigital.com/products/legacy-products/" target="_blank">Optotrak</a> system. It is used to capture motion data coming from the fixed side (docking asset) and also from the motion side (robot and IDA). This system consists of infrared cameras which are mounted on a circular truss which is attached to the Blue Superstructure as shown in figure 8 up close, while in figure 1 it is shown from a distance.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/Optotrak.jpg" alt="Optotrak">
+                    <figcaption><strong>Figure 8: Optorak Camera</strong></figcaption>
+                </figure>
+                <p>The adjustable mount that attaches the camera to the mounting plate at the truss is called the Brunson mount, which is shown in figure 9. </p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/BrunsonMount.jpg" alt="ATI Box Mount Before">
+                    <figcaption><strong>Figure 9: Brunson Mount</strong></figcaption>
+                </figure>
+                <p>The brunson mount is inverted in figure 9 so the top pieces on the brunson mount in figure 9 is where the brunson mount attaches to the optorak camera. Figure 10 shows the brunson mount without the part that attaches to the camera, keep in mind the brunson mount is flipped.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/NoCameraAttachment.jpg" alt="ATI Box Mount Before">
+                    <figcaption><strong>Figure 10: Brunson Mount Without Camera Attachment Part</strong></figcaption>
+                </figure>
+                <p>Figure 11 shows the three set screws which kept the parts from disengaging, which was not a reliable design, especially given the cost and importance of the Optotrak system. Figure 12 shows the Optotrak camera with the correlating attachment points shown in figure 11.</p>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/CameraMount.jpg" alt="ATI Box Mount Before">
+                    <figcaption><strong>Figure 11: Optotrak Mount Set Screws Inside View</strong></figcaption>
+                </figure>
+                <figure>
+                    <img src="WebsiteImages/Photos NASA Internship/OptotrakCamera.jpg" alt="ATI Box Mount Before">
+                    <figcaption><strong>Figure 12: Optotrak Camera Attachment Points</strong></figcaption>
+                </figure>
+                <p>The main task was to redesign the attachment method so that it does not rely on the sheer of those three set screws. I introduced an innovative attachment method consisting of aligning the two parts, joining them, twisting, and locking them with four set screws. This can be seen in the video below.</p>
+                <section class="project-results">
+                    <h3>Optotrak Mount Redesign</h3>
+                    <div class="video-container">
+                        <video controls width="100%">
+                            <source src="WebsiteImages/Photos NASA Internship/OptotrakNew.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p>In this video, I demonstrate the new attachment method for the Optotrak Cameras. First I align and join the two parts, then I turn the piece I have in my hand, lastly you would screw in the set screws which would keep the piece from turning. My tasks can be summarized like this:</p>
+                    <ul>
+                        <li>Redesigned the camera attachment to eliminate reliance on three set screws.</li>
+                        <li>Developed a secure, twist-and-lock mechanism with additional set screws.</li>
+                        <li>Hosted a design review with NASA engineers to refine the concept.</li>
+                    </ul>
+                </section>
+                      
+                   
+                <h2>SES Project (June 2022 - August 2022)</h2>
+                <p>I also worked on the <a  href="https://www.nasa.gov/general/systems-engineering-simulator/" target="_blank">SES</a> project during my internship. The SES project houses simulators for the International Space Station (ISS), Orion, lunar landing systems, and the one I supported lunar surface mobility (Mini Dome - Motion Table Simulator) which is a mini Stewart Platform used to train astronauts to drive on the moon. I supported this project by creating CAD models and drawings for new hardware installations so that they can be implemented into the full assembly. This also supported the stress analysis from the stress team to evaluate the motion table. I supported this project for about six weeks (40 percent per week). My primary task was to optimize the floor tile layout around the motion table.</p> 
+                <figure>
+                    <img src="WebsiteImages/SES (2).jpg" alt="SES">
+                    <figcaption><strong>Figure 13: SES Mini Dome - Motion Table Simulator</strong></figcaption>
+                </figure>
+                <h3>Floor Tiles around Motion Table</h3>
+                <p>My main task was to design a floor layout around the robot as shown in figure 13, in order to maximize accessibility in case of an emergency. For this task:</p>
+                <ul>
+                    <li>Created multiple floor layout options and performed interference checks for the robot's motion.</li>
+                    <li>Selected optimal floor layout, then generated detailed CAD drawings specifying required cuts and tile placements.</li>
+                </ul>
+                <figure>
+                    <img src="WebsiteImages/SES.jpg" alt="SES">
+                    <figcaption><strong>Figure 14: Optotrak Camera Attachment Points</strong></figcaption>
+                </figure>
+                <p>Figure 15 shows the final result of the floor tiles, as shown it is more accessible to the Motion Table Simulator with easy access to the operator (crew member training). This is the latest image which can be found in the <a  href="https://www.nasa.gov/general/systems-engineering-simulator/" target="_blank">SES</a> webpage.</p>
+                <figure>
+                    <img src="WebsiteImages/SES.webp" alt="SES">
+                    <figcaption><strong>Figure 15: Optotrak Camera Attachment Points (Image src: <a  href="https://www.nasa.gov/general/systems-engineering-simulator/" target="_blank">SES</a>)</strong></figcaption>
+                </figure>
+                <p>From working on this project simultaneously with SDTS, I gained time management skills, as well as the technical skills: drafting, NASA drawing standards. As mentioned before, I also supported with creating several drawings of the new hardware that was being added to the simulator.</p>
+                
+            </div>
+          
+    <footer>
+        <p>&copy; 2025 Leonardo Herrera. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
